@@ -31,17 +31,20 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
-INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'home',
-    'centralapp',
-    'doctor',
-    'patient'
+
+INSTALLED_APPS = [ 
+    'crispy_forms', 
+    'centralapp.apps.CentralappConfig', 
+    'doctor.apps.DoctorConfig', 
+    'patient.apps.PatientConfig', 
+    'django.contrib.admin', 
+    'django.contrib.auth', 
+    'django.contrib.contenttypes', 
+    'django.contrib.sessions', 
+    'django.contrib.messages', 
+    'django.contrib.staticfiles', 
+    'django.conf', 
+    'import_export', 
 ]
 
 MIDDLEWARE = [
