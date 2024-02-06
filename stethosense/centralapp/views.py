@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from django.contrib.auth.models import auth
-from django.contrib.auth import authenticate,login,logout
+from django.contrib.auth import authenticate,login, logout
 from django.contrib import messages
 from patient.models import PatientProfile
 from doctor.models import DoctorProfile
@@ -57,7 +57,9 @@ def login(request):
 
 # uniquetogether
 
-
+def logout_view(request):
+    logout(request)
+    return redirect('centralapp:mainpage')
 
 def About_us(request):
     return render(request,'centralapp/about_us.html')

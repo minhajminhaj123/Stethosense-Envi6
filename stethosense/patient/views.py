@@ -1,12 +1,11 @@
 from django.shortcuts import render,redirect, get_object_or_404
 from django.http import HttpResponse
 from django.contrib.auth.models import User
-from django.contrib.auth import authenticate,login,logout
+from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from .forms import PatientRegisterForm,PatientProfileForm,PatientVitalsForm
 from django.contrib.auth.decorators import login_required
 from .models import PatientProfile,PatientVitals,Records,LabReports
-from django.contrib.auth import logout
 
 def patientRegister(request):
     if request.method =='POST':
@@ -31,6 +30,11 @@ def patientRegister(request):
     else:
         form = PatientRegisterForm()
     return render(request,'patient/patientregister.html',{'form':form})
+
+# @login_required
+# def logout_view(request):
+#     logout(request)
+#     return redirect(request, 'centralapp:mainpage')
 
 @login_required
 def create_patientprofile(request):
@@ -71,7 +75,6 @@ def patientvitals_input(request):
         form = PatientVitalsForm()
     return render(request,'patient/patientvital_info.html',{'form':form})
 
- 
 @login_required
 def patientProfile(request):
     profile = PatientProfile.objects.get(patient=request.user)
@@ -96,8 +99,8 @@ def patientRecords(request):
             med=des.split(":")
             m_list=[]
             for m in med:
-	            dosage=m.split("/")
-	            m_list.append(dosage)
+                dosage=m.split("/")
+                m_list.append(dosage)
             report.medication=m_list
 
     all_lab=LabReports.objects.filter(patientl=request.user).order_by('id').reverse()
@@ -147,8 +150,8 @@ def medications(request):
         med=des.split(":")
         m_list=[]
         for m in med:
-	        dosage=m.split("/")
-	        m_list.append(dosage)
+            dosage=m.split("/")
+            m_list.append(dosage)
 
         report.medication=m_list
         

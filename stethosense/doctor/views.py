@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect, get_object_or_404
 from django.http import HttpResponse
 from django.contrib.auth.models import User
-from django.contrib.auth import authenticate,login,logout
+from django.contrib.auth import authenticate,login
 from django.contrib import messages
 from .forms import DoctorRegisterForm, DoctorProfileForm
 from django.contrib.auth.decorators import login_required
@@ -17,7 +17,7 @@ def doctorRegister(request):
             user = form.save(commit=False)
             username = form.cleaned_data['username']
             password = form.cleaned_data['password1']
-            usertype = 2
+            # usertype = 2
             user.set_password(password)
             user.save()
             user = authenticate(username=username, password=password)
@@ -26,7 +26,7 @@ def doctorRegister(request):
                 return redirect('doctor:create_doctorprofile')
     else:
         form = DoctorRegisterForm()
-    return render(request,'doctor/doctorRegister.html',{'form':form})
+    return render(request,'pages/doctorRegister.html', {'form':form})
 
 @login_required
 def create_doctorprofile(request):
@@ -44,14 +44,14 @@ def create_doctorprofile(request):
     else:
         print("here")
         form = DoctorProfileForm()
-    return render(request,'doctor/doctor-profile-create.html',{'form':form})
+    return render(request,'pages/doctor-profile-create.html',{'form':form})
 
 
 @login_required
 def doctorProfile(request):
     profile = DoctorProfile.objects.get(doctor=request.user)
 
-    return render(request, 'doctor/doctor_profile.html',{'profile':profile})
+    return render(request, 'pages/doctor_profile.html',{'profile':profile})
 
 
 @login_required
@@ -68,7 +68,7 @@ def PatientList(request):
     print(len(patient_l))
 
 
-    return render(request, 'doctor/patientList.html',{'patientl':patient_l})
+    return render(request, 'pages/patientList.html',{'patientl':patient_l})
 
 
 @login_required
@@ -94,13 +94,13 @@ def pat_profile(request,p):
         med=des.split(":")
         m_list=[]
         for m in med:
-	        dosage=m.split("/")
+            dosage=m.split("/")
         m_list.append(dosage)
- 
+
         report.medication=m_list
         
         
-    return render(request,'doctor/patient_records_in_doc.html',{'subject':subject,"vitals":pat_vitals.first(),'Reports':all_reports,"labreports":all_lab})
+    return render(request,'pages/patient_records_in_doc.html',{'subject':subject,"vitals":pat_vitals.first(),'Reports':all_reports,"labreports":all_lab})
 
 @login_required
 def newReport(request,p):
@@ -109,7 +109,7 @@ def newReport(request,p):
     date=str(datetime.datetime.now()).split(" ")[0]
 
     obj={'doctor_name':doctor.name,'patient_name':patient.name,'date':date,"docid":doctor.id,"patid":patient.id}
-    return render(request,'doctor/report.html',{'details':obj})
+    return render(request,'pages/report.html',{'details':obj})
 
 @login_required
 def addReport(request):
@@ -163,4 +163,4 @@ def editdoctorprofile(request):
         doctor.doctor = request.user
         doctor.save()
         return redirect('doctor:doctorProfile')
-    return render(request,'doctor/doctor_profile_edit.html',{'form':form})
+    return render(request,'pages/doctor_profile_edit.html',{'form':form})
