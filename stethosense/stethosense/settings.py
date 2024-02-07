@@ -86,7 +86,7 @@ WSGI_APPLICATION = 'stethosense.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
@@ -121,6 +121,9 @@ USE_I18N = True
 
 USE_TZ = True
 
+#secretkey
+
+SECRET_KEY = '0(-tx=_av!m+mivi&au7$$3&+zomm3g8+_h^4upcp5=f(+pt75'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
