@@ -1,3 +1,4 @@
+from multiprocessing import context
 from django.shortcuts import render,redirect, get_object_or_404
 from django.http import HttpResponse
 from django.contrib.auth.models import User
@@ -6,6 +7,9 @@ from django.contrib import messages
 from .forms import PatientRegisterForm,PatientProfileForm,PatientVitalsForm
 from django.contrib.auth.decorators import login_required
 from .models import PatientProfile,PatientVitals,Records,LabReports
+# from django.template.loader import render_to_string
+# from wkhtmltopdf.views import PDFTemplateResponse
+
 
 def patientRegister(request):
     if request.method =='POST':
@@ -188,4 +192,25 @@ def editPatientVitals(request):
     # else:
         # form = PatientVitalsForm()
     return render(request,'patient/patient-vitals-edit.html',{'form':form})
+
+
+# def prescription_pdf(request):
+#     # Assuming you have a context dictionary with necessary data
+#     context = {
+#         'key1': 'value1',
+#         'key2': 'value2',
+#         # Add more key-value pairs as needed
+#     }
+
+#     # Render the prescription template to a string
+#     prescription_html = render_to_string('patient_records.html', context)
+
+#     # Generate PDF response
+#     response = PDFTemplateResponse(request=request,
+#                                     template=prescription_html,
+#                                     filename='prescription.pdf',
+#                                     context=context,  # Pass the context here
+#                                     show_content_in_browser=True)
+
+#     return response
 

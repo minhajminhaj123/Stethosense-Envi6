@@ -15,7 +15,7 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Grandstander" />
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu" />
 	<link rel="stylesheet" href="{% static 'centralapp/css_files/style.css' %}">
-	<link rel="icon" type="image/png" href="{% static 'centralapp/Images/icon.png' %}"/>
+	<link rel="icon" type="image/png" href="{% static 'centralapp/Images/favicon.png' %}"/>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -31,7 +31,7 @@
 	</script>
 	<nav class="navbar navbar-expand-lg navbar-light sticky-top" id="navstyle" >
 		<a class="navbar-brand" href="{% url 'centralapp:mainpage' %}" style="font-family: Cinzel; font-size: 40px !important; color: white;" >
-			<img src="{% static 'centralapp/Images/icon.png' %}" width="44" height="44" class="d-inline-block align-top" alt="Logo" loading="lazy">
+			<img src="{% static 'centralapp/Images/favicon.png' %}" width="44" height="44" class="d-inline-block align-top" alt="Logo" loading="lazy">
 			StethoSense
 		</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"  aria-expanded="true" aria-label="Toggle navigation">
@@ -77,12 +77,10 @@
 				<li class="nav-item">
 					<a class="nav-link "  href="{% url 'centralapp:FAQS' %}">FAQs</a>
 				</li>
-				<li class="nav-item">
+				<!-- <li class="nav-item">
 					<a class="nav-link"  href="#about_us">About us</a>
-				</li>
-				<li class="nav-item covidButton">
-					<a class="nav-link" href="{% url 'centralapp:Covid_19' %}" >Covid-19 Checkpoints </a>
-				</li>
+				</li> -->
+		
 				{% if user.is_authenticated %}
 				<li class="nav-item dropdown">
 					<a class="nav-link " style="background:#3a8684;color:white;border-radius: 8px;" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
@@ -120,34 +118,34 @@
 				{% endfor %}
 	{% endif %}
 	<div class="img1">
-		<div class="mainpage-head" style="top: 55%;">
+		<div class="mainpage-head" style="top: 55%; font-weight: 900; color: rgb(35, 34, 34); font-family: Arial, sans-serif;">
 			StethoSense
 		</div>
+		
 		<div class="mainpage-text" style="top: 70%;">
-				One place for all your health records.
 		</div>
 	</div>
 	<section class="section section-light">
 		<h2 style="font-family: 'Oswald'; font-size: 33px;">
-			Why a digital health record? <br>
+			Why Choose StethoSense for Your Health Management? <br>
 		</h2>
 		<p style="font-size: 20px;">
-			<!-- Have you ever found it cumbersome to carry all your health records to every doctor that you visit? <br>
-			If yes, then here's the answer. <br> -->
-			A digital health record system lets you control and keep track of your records in an online setting,
-			without having you to carry all the cumbersome paperwork aroundto every doctor that you visit.
-			With digitalisation rapidly transforming our environment, it is important that our health systems evolve with the changes around.
-
+			StethoSense offers a centralized platform for users to record and manage their health data, streamlining the often fragmented process of healthcare management. With StethoSense, you have direct engagement, empowering you to take control of your health journey.
 		</p>
 		<h2 style="font-family: 'Oswald'; font-size: 33px;">
-			Providing a hassle-free environment to manage your health records. <br>
+			Personalized Diet Plans Tailored to Your Health Profile
 		</h2>
 		<p style="font-size: 20px;">
-			With StethoSense, you'll be able to manage your health records at your fingerprints. At StethoSense, we've turned the process of health record management entirely database-driven, making
-			management of these records totally effortless.
+			Utilizing AI models, StethoSense delivers personalized diet recommendations, eliminating the need for specialized consultations. Our user-friendly application ensures universal accessibility, democratizing healthcare management for everyone.
 		</p>
-
+		<h2 style="font-family: 'Oswald'; font-size: 33px;">
+			Cultivate Proactive Health Habits with StethoSense
+		</h2>
+		<p style="font-size: 20px;">
+			StethoSense simplifies healthcare management and promotes user engagement, fostering a culture of proactive health management and well-being. Take a more active role in your health with StethoSense.
+		</p>
 	</section>
+	
 
 	<div class="img2" >
 		<div class="mainpage-text" style="color: white; top: 30%;">
@@ -161,35 +159,57 @@
 		</div>
 
 	</div>
-	<section class="section section-light" >
-		<h1 class="display" data-aos="fade-down" data-aos-duration="1000">Why Us</h1>
-		<div class="main_container row" data-aos="fade-down" data-aos-duration="1500">
+	<section class="section section-light">
+		<h1 class="display" data-aos="fade-up" data-aos-duration="1000">Why Us</h1>
+		<div class="main_container row" data-aos="fade-up" data-aos-duration="1500">
 			<div class="col-lg-6 paragraph features" data-aos="fade-left" data-aos-duration="1000">
 				<ul>
-					<li>1) Upload your lab test results</li><br>
-					<li>2) Keep a track of your past and current medication</li>
+					<li>Centralized Platform: Stethosense offers a singular platform for users to record and manage their health data, streamlining the often fragmented process of healthcare management.</li>
 				</ul>
 			</div>
 			<div class="col-lg-6 paragraph features" data-aos="fade-right" data-aos-duration="1000">
 				<ul>
-					<li>3) Enhanced security</li><br>
-					<li>4) Get more information on the symptoms and causes of any disease</li>
+					<li>Direct User Interaction: Unlike traditional approaches that primarily benefit healthcare institutions, Stethosense prioritizes direct user interaction, empowering individuals to take control of their own health journey.</li>
 				</ul>
 			</div>
 		</div>
 	</section>
-
-
-
-	<div class="img3">
-		<div class="mainpage-text" style="top: 30%;">
-			Drop us a message or a feedback. <br><br>
-			<textarea style="background-color:#eeeeee; border-radius: 15px;padding: 20px ;font-family: 'Grandstander';font-size: 20px;text-align: left;" rows="4" cols="40"
-				name="description">
-						 </textarea>
-				<input style="padding: 5px; border-radius: 15px;font-family: 'Ubuntu'; font-size: 20px;" type="submit" value="Submit" />
+	
+	<section class="section section-light">
+		<h1 class="display" data-aos="fade-up" data-aos-duration="1000">Personalized Diet Recommendations</h1>
+		<div class="main_container row" data-aos="fade-up" data-aos-duration="1500">
+			<div class="col-lg-6 paragraph features" data-aos="fade-left" data-aos-duration="1000">
+				<ul>
+					<li>AI-Powered Recommendations: Stethosense utilizes advanced AI models to deliver personalized diet plans tailored to individual health profiles, eliminating the need for specialized consultations and enhancing accessibility to dietary guidance.</li>
+				</ul>
+			</div>
+			<div class="col-lg-6 paragraph features" data-aos="fade-right" data-aos-duration="1000">
+				<ul>
+					<li>Enhanced Accessibility: Accessible through a user-friendly application, Stethosense aims to democratize healthcare management by making it available to the general public, recognizing the universal need for health monitoring and care.</li>
+				</ul>
+			</div>
 		</div>
-	</div>
+	</section>
+	
+	<section class="section section-light">
+		<h1 class="display" data-aos="fade-up" data-aos-duration="1000">Promoting Proactive Health Habits</h1>
+		<div class="main_container row" data-aos="fade-up" data-aos-duration="1500">
+			<div class="col-lg-6 paragraph features" data-aos="fade-left" data-aos-duration="1000">
+				<ul>
+					<li>Empowering Users: By simplifying healthcare management and promoting user engagement, Stethosense fosters a culture of proactive health management and well-being, encouraging individuals to take a more active role in their health.</li>
+				</ul>
+			</div>
+			<div class="col-lg-6 paragraph features" data-aos="fade-right" data-aos-duration="1000">
+				<ul>
+					<li>Universal Accessibility: Accessible through a user-friendly application, Stethosense aims to democratize healthcare management by making it available to the general public, recognizing the universal need for health monitoring and care.</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+	
+	
+
+
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 	<!--<script>

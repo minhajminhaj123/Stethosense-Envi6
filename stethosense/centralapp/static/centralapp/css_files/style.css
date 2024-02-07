@@ -3,9 +3,9 @@ html{
 }
 
 #navstyle{
-	background-color: #24a19c;
-	color: #FFFFF0;
-	background-image: linear-gradient(90deg, #24a19c 0%, #cedebd 100%);
+	background-color: #0c7f40;
+	color: #0a0a09;
+	background-image: linear-gradient(90deg, #10780d 0%, #cedebd 100%);
 
 }
 * {
@@ -26,13 +26,14 @@ html{
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
+
 }
 .img1{
-	background-image: url('../Images/doctor_mid.jpg');
+	background-image: url('../Images/stethomain.jpg');
 	min-height: 600px;
 }
 .img2{
-	background-image: url('../Images/search_bar.jpg');
+	background-image: url('../Images/stetho.jpg');
 	min-height: 500px;
 }
 .img3{

@@ -12,7 +12,7 @@ from patient.models import PatientProfile,PatientVitals,LabReports,Records
 import datetime
 def doctorRegister(request):
     if request.method =='POST':
-        form = DoctorRegisterForm(request.POST)
+        form = DoctorProfileForm(request.POST, request.FILES)
         if form.is_valid():
             user = form.save(commit=False)
             username = form.cleaned_data['username']

@@ -38,7 +38,6 @@
                         </tbody>
                     </table>
                     <p><strong>Additional Precautions:</strong> {{report.additional_precautions}}</p>
-                        
                 </div>
                 <hr>
                 {% empty %}
@@ -49,6 +48,13 @@
                     
                 </div>
             {%endfor%}
+            <button onclick="printPage()">Print to PDF</button>
+
+            <script>
+                function printPage() {
+                    window.print();
+                }
+            </script>
             </div>
         </div>
     </div>
